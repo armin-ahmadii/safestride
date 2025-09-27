@@ -112,6 +112,10 @@ export default function App() {
       if (!best) return setStatus("No pedestrian route found.");
 
       const coords = best.geometry.coordinates;
+
+      setStatus("Finding neighborhoods along route…");
+      const hoods = await getRouteNeighborhoods(coords);
+
       upsertRoute({
         type: "Feature",
         properties: {
@@ -120,9 +124,16 @@ export default function App() {
         },
         geometry: { type: "LineString", coordinates: coords },
       });
+      // Get neighborhoods for start and end
+      const startHood = await getNeighborhood(start);
+      const endHood   = await getNeighborhood(end);
 
       fitTo(coords);
-      setStats({ km: best.distance / 1000, min: best.duration / 60 });
+      setStats({
+        km: best.distance / 1000,
+        min: best.duration / 60,
+        neighborhoods: hoods
+      });
       setStatus("Done ✅");
     } catch (err) {
       console.error(err);
@@ -138,16 +149,43 @@ export default function App() {
     setStatus("");
   };
 
+  const getNeighborhood = async ([lon, lat]) => {
+  const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${lon},${lat}.json`;
+  const { data } = await axios.get(url, {
+    params: {
+      access_token: mapboxgl.accessToken,
+      types: "neighborhood,locality", // you can add place, region, postcode
+    },
+    });
+    if (data.features?.length) {
+      return data.features[0].text; // e.g., "Kitsilano"
+    }
+    return null;
+  };
+
+  const getRouteNeighborhoods = async (coords) => {
+    const sampleEvery = 15; // pick every 5th coordinate (tweak for density)
+    const samples = coords.filter((_, i) => i % sampleEvery === 0);
+
+    const names = [];
+    for (let point of samples) {
+      const name = await getNeighborhood(point);
+      if (name && !names.includes(name)) {
+        names.push(name);
+      }
+    }
+    return names;
+  };
+
+
+
   return (
     <>
-    <header style={{display:"flex", justifyContent:"space-between", alignItems:"center", padding:"1rem", background:"#fff", boxShadow:"0 2px 4px rgba(0,0,0,0.1)"}}>
-      <div style={{fontWeight:"bold", fontSize:"1.25rem", color:"#fc4c02"}}>SafeStride</div>
+    <header style={{display:"flex", justifyContent:"space-between", alignItems:"center", padding:"1rem", background:"#0000004d", boxShadow:"0 2px 4px rgba(0,0,0,0.1)", borderRadius:"12px"}}>
+      <p style={{ color: "#ff3232ff", fontSize:"1.0rem", fontWeight:"bold"}}>Run Smarter. Run Faster.</p>
       <nav style={{display:"flex", gap:"1rem"}}>
-        <a href="#">Activities</a>
-        <a href="#">Maps</a>
-        <a href="#">Features</a>
+        <div style={{fontWeight:"bold", fontSize:"1.5rem", color:"#ff3232ff"}}>SafeStride</div>
       </nav>
-      <button style={{padding:"0.5rem 1rem", border:"1px solid #ccc", borderRadius:"4px"}}>Log In</button>
     </header>
     <div
       style={{
@@ -172,7 +210,7 @@ export default function App() {
           alignContent: "start",
         }}
       >
-        <h3 style={{ margin: 0 }}>Walking route (addresses)</h3>
+        <h3 style={{ margin: 0 }}>Where are you running to?</h3>
 
         {/* START (input must be direct child of mapbox-address-autofill) */}
         <div style={{ display: "grid", gap: 6 }}>
@@ -218,6 +256,7 @@ export default function App() {
           <div style={{ fontSize: 14 }}>
             <div><b>Distance:</b> {stats.km.toFixed(2)} km</div>
             <div><b>Duration:</b> {Math.round(stats.min)} min</div>
+            <div><b>Neighbourhoods:</b> {stats.neighborhoods.join(" → ")}</div>
           </div>
         )}
       </div>
@@ -230,7 +269,7 @@ export default function App() {
           height: "100%",
           borderRadius: 12,
           overflow: "hidden",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+          boxShadow: "0 4px 12px #0000004d",
         }}
       />
     </div>

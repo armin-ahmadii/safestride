@@ -7,6 +7,18 @@
 import os, math, requests
 from typing import Tuple, List
 
+INT_SEVERITY = {
+    "Assault": 5,
+    "Robbery": 4,
+    "Break and Enter Residential/Other": 3,
+    "Break and Enter Commercial": 3,
+    "Theft of Vehicle": 2,
+    "Theft from Auto": 1,
+    "Theft of Bicycle": 1,
+    "Mischief": 1
+}
+
+
 MB_TOKEN = os.environ.get("MAPBOX_TOKEN")
 if not MB_TOKEN:
     raise RuntimeError("Set MAPBOX_TOKEN env var (your Mapbox access token)")
