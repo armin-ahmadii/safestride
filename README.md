@@ -203,5 +203,6 @@ Created for the 2025 Fall Hacks Hackathon. -->
 - **Fall Hacks 2025** - Hackathon organizers
 
 --- -->
+---
 
 **Built with ❤️ and lots of ☕ for safer walking in Vancouver**
