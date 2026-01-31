@@ -39,9 +39,11 @@ Built for the **2025 Fall Hacks Hackathon**.
 
 ### Installation
 
-1. **Navigate to the project directory**
+1. **Clone this repository**
    ```bash
+   git clone git@github.com:USERNAME/safestride.git
    ```
+   or use GitHub Desktop
 
 2. **Install dependencies**
    ```bash
@@ -52,10 +54,10 @@ Built for the **2025 Fall Hacks Hackathon**.
    
    Create a `.env` file:
    ```bash
-   cp .env.example .env
+   touch .env
    ```
    
-   Edit `.env` and add your Mapbox token:
+   Edit `.env` and add the following line:
    ```
    VITE_MAPBOX_TOKEN=your_mapbox_token_here
    ```
@@ -73,7 +75,7 @@ Built for the **2025 Fall Hacks Hackathon**.
 
 ## 📖 How to Use
 
-1. **Enter addresses**: Add your starting point and destination in Vancouver
+1. **Enter addresses**: Add your starting point and destination in The City of Vancouver
 2. **Click "Find Safe Routes"**: The app analyzes crime data and generates 3 optimized routes
 3. **Compare routes**: View safety scores, distance, time, and crime exposure for each option
 4. **Select your route**: Click on any route card to see it highlighted on the map
@@ -156,18 +158,7 @@ Covers:
 - Assumptions, limitations, and trade-offs
 - Validation approach and performance metrics
 
----
-
-## 📝 Available Scripts
-
-```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run preview  # Preview production build
-npm run lint     # Run ESLint
-```
-
----
+<!-- ---
 
 ## 🎯 Key Metrics
 
@@ -177,33 +168,33 @@ npm run lint     # Run ESLint
 | Route Alternatives | 3 per search |
 | Safety Improvement | ~25% vs baseline |
 | Processing Time | < 3 seconds |
-| Safety Score Range | 0-100 |
+| Safety Score Range | 0-100 | -->
 
----
+<!-- ---
 
 ## 🔒 Privacy & Data
 
 - **Data Source**: Vancouver Police Department Open Data
 - **Anonymization**: Crime locations anonymized to "hundred blocks"
 - **Local Processing**: All analysis done client-side
-- **No Tracking**: No user route data collected or stored
+- **No Tracking**: No user route data collected or stored -->
 
----
+<!-- ---
 
 ## 🤝 Team
 
 - **Role**: Team Lead
 - **Team Size**: 4 members
 - **Duration**: Fall 2025
-- **Stack**: JavaScript, React, REST APIs, PostgreSQL
-
+- **Stack**: JavaScript, React, REST APIs, PostgreSQL -->
+<!-- 
 ---
 
 ## 📄 License
 
-Created for the 2025 Fall Hacks Hackathon.
+Created for the 2025 Fall Hacks Hackathon. -->
 
----
+<!-- ---
 
 ## 🙏 Acknowledgments
 
@@ -211,6 +202,6 @@ Created for the 2025 Fall Hacks Hackathon.
 - **Mapbox** - Mapping and routing APIs
 - **Fall Hacks 2025** - Hackathon organizers
 
----
+--- -->
 
-**Built with ❤️ for safer walking in Vancouver**
+**Built with ❤️ and lots of ☕ for safer walking in Vancouver**

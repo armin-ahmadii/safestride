@@ -416,14 +416,14 @@ export default function App() {
             </div>
 
             {/* Metrics Toggle */}
-            {routes.length > 0 && (
+            {/* {routes.length > 0 && (
               <button
                 onClick={() => setShowMetrics(!showMetrics)}
                 style={metricsButtonStyle}
               >
                 {showMetrics ? '📊 Hide' : '📊 Show'} Algorithm Details
               </button>
-            )}
+            )} */}
 
             {/* Heatmap Toggle */}
             {crimeData && (
@@ -521,6 +521,7 @@ const mainLayoutStyle = {
 
 const leftPanelStyle = {
   display: "flex",
+  width: 500,
   flexDirection: "column",
   gap: 16,
   overflowY: "auto",
@@ -596,8 +597,9 @@ const statusStyle = {
 };
 
 const mapStyle = {
-  width: "100%",
+  width: "95%",
   height: "100%",
+  marginLeft: "auto",
   borderRadius: 12,
   overflow: "hidden",
   boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
