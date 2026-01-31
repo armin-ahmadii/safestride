@@ -1,0 +1,512 @@
+/* Component Styles */
+
+/* ===== SafetyScoreCard ===== */
+.safety-score-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 16px;
+}
+
+.recommended-badge {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #111;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.score-display {
+    text-align: center;
+    padding: 24px;
+    border: 3px solid;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.score-number {
+    font-size: 56px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.score-label {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.score-interpretation {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.crime-breakdown {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+}
+
+.breakdown-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 12px;
+}
+
+.breakdown-stats {
+    margin-bottom: 16px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 14px;
+}
+
+.stat-label {
+    color: #6b7280;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: #111827;
+}
+
+.severity-breakdown {
+    display: grid;
+    gap: 8px;
+}
+
+.severity-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.severity-item.high {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.severity-item.medium {
+    background: #fed7aa;
+    color: #9a3412;
+}
+
+.severity-item.low {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.severity-label {
+    font-weight: 500;
+}
+
+.severity-count {
+    font-weight: 700;
+}
+
+/* ===== RouteComparison ===== */
+.route-comparison {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.route-comparison h3 {
+    margin: 0 0 8px 0;
+    color: #111827;
+}
+
+.comparison-subtitle {
+    margin: 0 0 16px 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.routes-list {
+    display: grid;
+    gap: 12px;
+}
+
+.route-card {
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.route-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.route-card.selected {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.route-card.expanded {
+    border-color: #1d4ed8;
+}
+
+.route-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.route-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.route-number {
+    font-weight: 700;
+    font-size: 16px;
+    color: #111827;
+}
+
+.recommended-tag {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.composite-score {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1d4ed8;
+}
+
+.route-quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.quick-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.stat-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.stat-icon {
+    font-size: 16px;
+}
+
+.stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.best-badge {
+    font-size: 10px;
+    background: #fef3c7;
+    color: #92400e;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-left: auto;
+}
+
+.stat-value {
+    font-weight: 700;
+    color: #111827;
+    font-size: 15px;
+}
+
+.stat-diff {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.stat-diff.negative {
+    color: #dc2626;
+}
+
+.stat-diff.positive {
+    color: #10b981;
+}
+
+.stat-text {
+    font-weight: 600;
+    color: #374151;
+}
+
+.route-type-indicator {
+    font-size: 12px;
+    color: #6b7280;
+    padding: 6px 10px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.route-details {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+    margin-top: 12px;
+}
+
+.explanation-section {
+    margin-bottom: 16px;
+}
+
+.explanation-summary {
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.explanation-block {
+    margin-bottom: 16px;
+}
+
+.explanation-block h4 {
+    font-size: 14px;
+    margin: 0 0 8px 0;
+    color: #111827;
+}
+
+.explanation-block ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.explanation-block li {
+    font-size: 13px;
+    color: #4b5563;
+    margin-bottom: 4px;
+}
+
+.expand-indicator {
+    text-align: center;
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* ===== MetricsPanel ===== */
+.metrics-panel {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.metrics-header {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: #ffffff;
+    padding: 20px;
+}
+
+.metrics-header h3 {
+    margin: 0 0 8px 0;
+}
+
+.metrics-header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.metrics-tabs {
+    display: flex;
+    background: #f3f4f6;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.metrics-tabs .tab {
+    flex: 1;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.metrics-tabs .tab:hover {
+    background: #e5e7eb;
+}
+
+.metrics-tabs .tab.active {
+    color: #1e40af;
+    border-bottom-color: #1e40af;
+    background: #ffffff;
+}
+
+.metrics-content {
+    padding: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.tab-content h4 {
+    margin: 0 0 16px 0;
+    color: #111827;
+}
+
+.assumption-block,
+.metric-card,
+.tradeoff-block {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
+.assumption-block h5,
+.metric-card h5,
+.tradeoff-block h5 {
+    margin: 0 0 12px 0;
+    color: #1e40af;
+    font-size: 15px;
+}
+
+.assumption-block ul,
+.metric-card ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.assumption-block li,
+.metric-card li {
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.tradeoff-block p {
+    margin: 0;
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.severity-weights {
+    display: grid;
+    gap: 8px;
+}
+
+.severity-weight-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    padding: 8px;
+    background: #ffffff;
+    border-radius: 6px;
+}
+
+.severity-name {
+    font-weight: 700;
+    color: #111827;
+}
+
+.severity-value {
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+.severity-types {
+    grid-column: 1 / -1;
+    font-size: 12px;
+    color: #6b7280;
+    padding-top: 4px;
+}
+
+.improvement-display {
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.improvement-positive {
+    font-size: 48px;
+    font-weight: bold;
+    color: #10b981;
+    display: block;
+}
+
+.improvement-neutral {
+    font-size: 48px;
+    color: #3b82f6;
+    display: block;
+}
+
+.improvement-info {
+    font-size: 24px;
+    font-weight: 600;
+    color: #6b7280;
+    display: block;
+}
+
+.improvement-display p {
+    margin: 8px 0 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.improvement-details {
+    font-size: 13px;
+    color: #4b5563;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Light mode overrides */
+@media (prefers-color-scheme: light) {
+
+    .safety-score-card,
+    .route-card,
+    .metrics-panel {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+}
