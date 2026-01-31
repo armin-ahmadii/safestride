@@ -364,7 +364,7 @@ export default function App() {
         {/* Left Panel - Inputs and Route Comparison */}
         <div style={leftPanelStyle}>
           <div style={inputPanelStyle}>
-            <h3 style={{ margin: 0 }}>Plan Your Route</h3>
+            <h3 style={{ margin: 0, color: "black"}}>Plan Your Route</h3>
 
             {/* Crime Data Status */}
             {crimeDataLoading && (
