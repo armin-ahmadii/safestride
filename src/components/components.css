@@ -1,6 +1,3 @@
-/* Component Styles */
-
-/* ===== SafetyScoreCard ===== */
 .safety-score-card {
     background: #ffffff;
     border-radius: 12px;
@@ -325,7 +322,6 @@
     font-weight: 500;
 }
 
-/* ===== MetricsPanel ===== */
 .metrics-panel {
     background: #ffffff;
     border-radius: 12px;
