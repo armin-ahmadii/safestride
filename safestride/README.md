@@ -41,7 +41,6 @@ Built for the **2025 Fall Hacks Hackathon**.
 
 1. **Navigate to the project directory**
    ```bash
-   cd /Users/nathanomana/CS/Github_Repos/SafeStride/safestride_files/safestride
    ```
 
 2. **Install dependencies**
